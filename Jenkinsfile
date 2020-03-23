@@ -40,7 +40,7 @@ git credentialsId: 'git', url: 'https://github.com/shivanani220/VProfile.git'
       
      }
  }
-/**	  stage('sonarqube') {
+/*	  stage('sonarqube') {
          environment {
            scannerHome = tool 'sonarqube'
        }
@@ -52,12 +52,12 @@ git credentialsId: 'git', url: 'https://github.com/shivanani220/VProfile.git'
            waitForQualityGate abortPipeline: true
            }
 	     }
-   **/  }    
+    } */   
   //  stage('Artifact upload') {
    //   steps {
      //  nexusPublisher nexusInstanceId: '1234', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'gameoflife-web/target/gameoflife.war']], mavenCoordinate: [artifactId: 'gameoflife', groupId: 'com.wakaleo.gameoflife', packaging: 'war', version: '$BUILD_NUMBER']]]
-      }
-     }
+     // }
+    // }
     //stage('Deploy War') {
       //steps {
         //sh label: '', script: 'ansible-playbook deploy.yml'
@@ -69,7 +69,7 @@ git credentialsId: 'git', url: 'https://github.com/shivanani220/VProfile.git'
   //          archiveArtifacts 'gameoflife-web/target/*.war'
     //    }
       // failure {
-        //   mail to:"raknas000@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Build failed"
+        //   mail to:"shivavamshi.89@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Build failed"
         //}
-   // }       
-//}
+   }       
+}
