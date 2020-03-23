@@ -12,8 +12,7 @@ stages {
 
       // Get some code from a GitHub repository
 
-      checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'git', url: 'https://github.com/shivanani220/game-of-life.git']]])'
-
+git credentialsId: 'git', url: 'https://github.com/shivanani220/VProfile.git'
       // Get the Maven tool.
      
  // ** NOTE: This 'M3' Maven tool must be configured
@@ -35,13 +34,13 @@ stages {
 //}
    }
  
- // stage('Unit Test Results') {
-   //   steps {
-     // junit '**/target/surefire-reports/TEST-*.xml'
+  stage('Unit Test Results') {
+      steps {
+      junit '**/target/surefire-reports/TEST-*.xml'
       
-     //}
- //}
-	  stage('sonarqube') {
+     }
+ }
+/**	  stage('sonarqube') {
          environment {
            scannerHome = tool 'sonarqube'
        }
@@ -53,8 +52,8 @@ stages {
            waitForQualityGate abortPipeline: true
            }
 	     }
-      }    
- //    stage('Artifact upload') {
+   **/  }    
+  //  stage('Artifact upload') {
    //   steps {
      //  nexusPublisher nexusInstanceId: '1234', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'gameoflife-web/target/gameoflife.war']], mavenCoordinate: [artifactId: 'gameoflife', groupId: 'com.wakaleo.gameoflife', packaging: 'war', version: '$BUILD_NUMBER']]]
       }
