@@ -24,7 +24,7 @@
      state: present
   - name: Copy fil
     copy:
-     src: /home/ansible/tomcat-users.xml
+     src: /home/shiva/tomcat-users.xml
      dest: /usr/share/tomcat/conf/tomcat-users.xml
   - name: enable service tomcat
     systemd:
