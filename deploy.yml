@@ -60,6 +60,6 @@
     get_url:
        #url: http://3.15.32.55:8081/service/local/artifact/maven/redirect?r=maven-releases&g=com.visualpathit&a=vprofile&p=war&v=LATEST
        url: http://3.15.32.55:8081/repository/maven-releases/com/visualpathit/vprofile/23/vprofile-23.war
-       dest: /usr/share/tomcat/webapps/vprofile-v1.war
+       dest: /usr/share/tomcat/webapps/vprofile-23.war
   - name: Start Tomcat
     service: name=tomcat state=started
