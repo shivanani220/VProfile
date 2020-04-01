@@ -61,7 +61,7 @@
      path: /usr/share/tomcat
      owner: tomcat
      group: tomcat
-     mode: 0644
+     mode: 0755
   - name: Deploy War File
     get_url:
        #url: http://3.15.32.55:8081/service/local/artifact/maven/redirect?r=maven-releases&g=com.visualpathit&a=vprofile&p=war&v=LATEST
