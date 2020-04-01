@@ -56,14 +56,14 @@ git credentialsId: 'git', url: 'https://github.com/shivanani220/VProfile.git'
     stage('Artifact upload') {
        steps {
       //  nexusPublisher nexusInstanceId: '1234', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'gameoflife-web/target/gameoflife.war']], mavenCoordinate: [artifactId: 'gameoflife', groupId: 'com.wakaleo.gameoflife', packaging: 'war', version: '$BUILD_NUMBER']]]
-        nexusArtifactUploader artifacts: [[artifactId: 'vprofile', classifier: '', file: 'target/vprofile-v1.war', type: 'war']], credentialsId: 'nexus', groupId: 'visual', nexusUrl: '13.59.139.137:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-releases', version: '$BUILD_NUMBER' 
+        nexusArtifactUploader artifacts: [[artifactId: 'vprofile', classifier: '', file: 'target/vprofile-v1.war', type: 'war']], credentialsId: 'nexus', groupId: 'visual', nexusUrl: '3.15.32.55:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-releases', version: '$BUILD_NUMBER' 
+        }
        }
+     stage('Deploy War') {
+        steps {
+          sh label: '', script: 'ansible-playbook deploy.yml'
        }
-    //stage('Deploy War') {
-      //steps {
-        //sh label: '', script: 'ansible-playbook deploy.yml'
-      //}
- //}
+   }
 //}
 //post {
   //     success {
