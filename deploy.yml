@@ -59,6 +59,6 @@
   - name: Deploy War File
     get_url:
        url: http://3.15.32.55:8081/repository/maven-releases/visual/vprofile/8/vprofile-8.war
-       dest: /usr/share/tomcat/webapps/
+       dest: /usr/share/tomcat/webapps/vprofile-v1.war
   - name: Start Tomcat
     service: name=tomcat state=started
