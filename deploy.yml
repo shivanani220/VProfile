@@ -17,9 +17,9 @@
     when: stat_result.stat.exists == True
  
   - name: Deploy War File
-    shell: sudo curl -L -o vprofile.v1.war http://18.222.248.18:8081/service/rest/v1/search/assets/download?sort=version&direction=desc&repository=maven-releases&maven.groupId=com.visualpathit&maven.artifactId=vprofile&maven.extension=war
+    shell: curl -L -o vprofile.v1.war http://18.222.248.18:8081/service/rest/v1/search/assets/download?sort=version&direction=desc&repository=maven-releases&maven.groupId=com.visualpathit&maven.artifactId=vprofile&maven.extension=war
     args:
-      chdir: /usr/shre/tomcat/webapps
+      executable: /usr/share/tomcat/webapps
       
 
 
