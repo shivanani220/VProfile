@@ -18,11 +18,11 @@
     stat:
       path: /usr/share/tomcat/webapps/vprofile
     register: stat_result
-  - name: Delete the vprofile dir, if it exist already
-    file:
-      path: /usr/share/tomcat/webapps/vprofile
-      state: absent
-      when: stat_result.stat.exists == True
+#  - name: Delete the vprofile dir, if it exist already
+#    file:
+#      path: /usr/share/tomcat/webapps/vprofile
+#      state: absent
+#      when: stat_result.stat.exists == True
 #  - name: change the tomcat file permition
 #    file:
 #     path: /usr/share/tomcat
