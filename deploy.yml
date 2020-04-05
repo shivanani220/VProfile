@@ -18,12 +18,8 @@
  
   - name: Deploy War File
     get_url:
-      url: http://18.188.6.70:8081/service/rest/v1/search/assets/download?sort=version&direction=desc&repository=maven-releases&maven.groupId=com.visualpathit&maven.artifactId=vprofile&maven.extension=war
-      dest: /usr/share/tomcat/webapps/vprofile-v1.war
-      username: admin
-      password: '{{ admin123 }}'
-      owner: tomcat
-      group: tomcat
+         url: http://18.188.6.70:8081/service/rest/v1/search/assets/download?sort=version&direction=desc&repository=maven-releases&maven.groupId=com.visualpathit&maven.artifactId=vprofile&maven.extension=war
+         dest: tomcat@13.58.188.0:/usr/share/tomcat/webapps/vprofile-v1.war
       
   - name: Start Tomcat
     service: name=tomcat state=started
