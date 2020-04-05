@@ -20,6 +20,8 @@
     get_url:
       url: http://18.188.6.70:8081/service/rest/v1/search/assets/download?sort=version&direction=desc&repository=maven-releases&maven.groupId=com.visualpathit&maven.artifactId=vprofile&maven.extension=war
       dest: /var/lib/tomcat/webapps/vprofile-v1.war
+      owner: tomcat
+      group: tomcat
       
   - name: Start Tomcat
     service: name=tomcat state=started
