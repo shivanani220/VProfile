@@ -16,7 +16,7 @@ stages {
 
       // Get some code from a GitHub repository
 
- git 'https://github.com/shivanani220/VProfile.git'
+      git 'https://github.com/shivanani220/VProfile.git'
       // Get the Maven tool.
      
  // ** NOTE: This 'M3' Maven tool must be configured
