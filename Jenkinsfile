@@ -1,5 +1,9 @@
 pipeline {
-    agent any 
+    agent {
+      node {
+        label 'slave-machine'
+    }
+}
     tools { 
         maven 'maven' 
       
@@ -40,7 +44,7 @@ git credentialsId: 'git', url: 'https://github.com/shivanani220/VProfile.git'
       
      }
  }
-	  stage('sonarqube') {
+/*  stage('sonarqube') {
          environment {
            scannerHome = tool 'sonarqube'
        }
@@ -72,6 +76,6 @@ git credentialsId: 'git', url: 'https://github.com/shivanani220/VProfile.git'
     //    }
       // failure {
         //   mail to:"shivavamshi.89@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Build failed"
-        //}
+        //}*/
    }       
 }
