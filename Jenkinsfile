@@ -2,40 +2,24 @@ pipeline {
     agent {
       node {
         label 'slave-machine'
-    }
-}
+       }
+   }
     tools { 
-        maven 'maven' 
-      
+        maven 'maven'       
     }
 stages { 
      
- stage('Preparation') { 
+ stage('git checkout') { 
      steps {
-// for display purpose
-
-      // Get some code from a GitHub repository
-
       git 'https://github.com/shivanani220/VProfile.git'
-      // Get the Maven tool.
-     
- // ** NOTE: This 'M3' Maven tool must be configured
- 
-     // **       in the global configuration.   
      }
    }
 
    stage('Build') {
        steps {
-       // Run the maven build
-
-      //if (isUnix()) {
-         sh label: '', script: 'mvn clean package'
-      //} 
-      //else {
-      //   bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
+          sh label: '', script: 'mvn clean package'
+     
        }
-//}
    }
  
   stage('Unit Test Results') {
