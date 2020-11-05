@@ -16,7 +16,6 @@
       state: absent
     when: stat_result.stat.exists == True
  
- 
   - name: Deploy War File
     get_url:
    # shell: curl -L -o /usr/share/tomcat/webapps/vprofile.v1.war -u tomcat:tomcat "http://3.139.105.107:8080/service/rest/v1/search/assets/download?sort=version&direction=desc&repository=maven-releases&maven.groupId=com.visualpathit&maven.artifactId=vprofile&maven.extension=war"
