@@ -46,11 +46,11 @@ stages {
        
        }
        }
-  /*   stage('Deploy War') {
+    stage('Deploy War') {
         steps {
           sh label: '', script: 'ansible-playbook deploy.yml'
        } 
-   } */
+   } 
 //}
 //post {
   //     success {
