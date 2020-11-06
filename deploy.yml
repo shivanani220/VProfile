@@ -18,7 +18,7 @@
  
   - name: Deploy War File
     #get_url:
-    shell: curl -L -o /usr/share/tomcat/webapps/vprofile.war -u tomcat:tomcat "http://3.128.18.226:8081/service/rest/v1/search/assets/download?sort=version&direction=desc&repository=maven-releases&maven.groupId=com.visualpathit&maven.artifactId=vprofile&maven.extension=war"
+    shell: curl -L -o /usr/share/tomcat/webapps/vprofile-v1.war -u tomcat:tomcat "http://3.128.18.226:8081/service/rest/v1/search/assets/download?sort=version&direction=desc&repository=maven-releases&maven.groupId=com.visualpathit&maven.artifactId=vprofile&maven.extension=war"
      #  url: http://18.224.18.252:8081/service/rest/v1/search/assets/download?sort=version&direction=desc&repository=maven-releases&maven.groupId=com.visualpathit&maven.artifactId=vprofile&maven.extension=war
       # dest: /usr/share/tomcat/webapps/vprofile-v1.war
      
