@@ -12,7 +12,7 @@ stages {
 
       // Get some code from a GitHub repository
       
-      git 'https://github.com/shivanani220/GOL-Repo.git'
+      git 'https://github.com/shivanani220/VProfile.git'
 
       // Get the Maven tool.
      
@@ -56,14 +56,14 @@ stages {
 } */
 /*     stage('Artifact upload') {
       steps {
-     nexusPublisher nexusInstanceId: '1234', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'gameoflife-web/target/gameoflife.war']], mavenCoordinate: [artifactId: 'gameoflife1', groupId: 'com.wakaleo.gameoflife', packaging: 'war', version: '$BUILD_NUMBER']]]
+             nexusPublisher nexusInstanceId: '1234', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/vprofile-v1.war']], mavenCoordinate: [artifactId: 'vprofile', groupId: 'com.visualpathit', packaging: 'war', version: '$BUILD_NUMBER']]] 
       }
  } */
     stage('Build and Push Docker Image') {
       steps {
-        sh label: '', script: '''docker build -t gameoflife-image:$BUILD_NUMBER .
-                                 docker tag gameoflife-image:$BUILD_NUMBER docker.io/shiva58/gameoflife-image:$BUILD_NUMBER
-                                 docker push docker.io/shiva58/gameoflife-image:$BUILD_NUMBER'''
+        sh label: '', script: '''docker build -t vprofile-image:$BUILD_NUMBER .
+                                 docker tag vprofile-image:$BUILD_NUMBER docker.io/shiva58/vprofile-image:$BUILD_NUMBER
+                                 docker push docker.io/shiva58/vprofile-image:$BUILD_NUMBER'''
       }
  }
   stage('Update Image Version') {
@@ -91,7 +91,7 @@ stages {
 }     
 post {
         success {
-            archiveArtifacts 'gameoflife-web/target/*.war'
+            archiveArtifacts 'target/*.war'
         }
         failure {
             mail to:"shivanani58@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Build failed"
