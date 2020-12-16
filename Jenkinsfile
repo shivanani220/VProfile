@@ -25,7 +25,7 @@ stages {
       
      }
  }
- stage('sonarqube') {
+/* stage('sonarqube') {
          environment {
            scannerHome = tool 'sonarqube'
        }
@@ -50,7 +50,7 @@ stages {
         steps {
           sh label: '', script: 'ansible-playbook deploy.yml'
        } 
-   } 
+   } */
 //}
 //post {
   //     success {
