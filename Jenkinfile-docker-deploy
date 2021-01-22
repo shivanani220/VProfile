@@ -40,8 +40,8 @@ stages {
  
   stage('Unit Test Results') {
       steps {
-     // junit '**/target/surefire-reports/TEST-*.xml'
-      junit 'build/reports/**/*.xml'
+      junit '**/target/surefire-reports/TEST-*.xml'
+      
       }
  }
 /* stage('Sonarqube') {
