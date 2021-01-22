@@ -41,7 +41,7 @@ stages {
   stage('Unit Test Results') {
       steps {
      // junit '**/target/surefire-reports/TEST-*.xml'
-      junit '/home/ansible/workspace/CI-CD-kubernetes/target/surefire-reports/TEST-*.xml'
+      junit '**/home/ansible/workspace/CI-CD-kubernetes/target/surefire-reports/TEST-*.xml'
       
       }
  }
