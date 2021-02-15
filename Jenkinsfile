@@ -25,7 +25,7 @@ stages {
       
      }
  }
-/* stage('sonarqube') {
+stage('sonarqube') {
          environment {
            scannerHome = tool 'sonarqube'
        }
@@ -48,14 +48,14 @@ stages {
         steps {
           sh label: '', script: 'ansible-playbook deploy.yml'
        } 
-   } */
-//}
-//post {
-  //     success {
-  //          archiveArtifacts 'target/*.war'
-    //    }
-      // failure {
-        //   mail to:"shivavamshi.89@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Build failed"
-        //}
+   } 
+}
+post {
+     success {
+            archiveArtifacts 'target/*.war'
+        }
+       failure {
+           mail to:"shivavamshi.89@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Build failed"
+        }
    }       
 }
